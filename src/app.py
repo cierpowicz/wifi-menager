@@ -40,6 +40,8 @@ class Program:
         self.SSID_selected_network = ssid
     # END SET SECTION 
 
+
+    # other functions()
     def print_wifis(self):
         print_wifis_01 = PrintWiFis()
         wifi_list = print_wifis_01.return_ssid_list()
@@ -56,6 +58,7 @@ class Program:
 
     def start_monitoring(self):
         pass
+
 
     # Display section 
     def introducing(self):
@@ -75,7 +78,8 @@ class Program:
         print (f"[2] Start Monitoring selected network ! {self.SSID_selected_network}")
         print ("[0] Wyjdz !")
 
-    # Cos tam
+
+    # system
     def stop_program(self):
         pass
 
@@ -83,10 +87,11 @@ class Program:
         os.system('clear')
 
 
-    # TEST SECTION 
+# Here an important moment. We create an OBJECT class PROGRAM. 
+# Like ; class Car, class Person, class Employye. Instead of 
+# return_car_color() function, we have for example: print_wifis(). 
 
 
-#tworzymy se obiekata eeelo
 program_01 = Program()
 
 
@@ -114,10 +119,14 @@ def main():
             program_01.set_wifis_ssid_list()
 
 
-            #podawanie indexku sieci
+            # Select the NETWORK you want to monitor
+
             print (" ")
             print ("TYPE 'r' to refresh networks !!!")
             choice_01 = input("Select network: ")
+
+
+            # Block try: except: to avoid krash
 
             try:
                 choice_01 = int(choice_01)
@@ -130,6 +139,7 @@ def main():
                 program_01.set_SSID_selected_network(program_01.wifis_ssid_list[choice_01 -1])
 
             except:
+
                 if choice_01 == 'r' or 'R':
                     program_01.clear_screen()
 
@@ -138,12 +148,19 @@ def main():
                     program_01.set_wifis_ssid_list()
 
                 else:
-                    print ("zie poklikane ziomus")
+                    print ("")
+
+
+
+        # The purpose of the program is to monitor the 
+        # network whether someone has connected or disconnected. 
+        # When the program detects such movement it should immediately send an SMS. 
+
 
 
         elif choice == "2":
             program_01.clear_screen()
-            print(f"MONITOROWANIE SIECI {program_01.SSID_selected_network}")
+            print(f"NETWORK MONITORING {program_01.SSID_selected_network}")
             
             monitoring_program_01 = MonitoringProgram(program_01.BSSID_selected_network,program_01.SSID_selected_network)
 
@@ -164,11 +181,7 @@ def main():
                     print ("zle klikniete")
 
 
-
-            
-
-        # test section
-       
+        # END PROGRAM
 
         elif choice == "0":
             print("Zamykanie programu...")
@@ -177,8 +190,6 @@ def main():
             print("Nieprawidłowa opcja. Spróbuj ponownie.")
 
 
-
-#Pomidor13
 
 if __name__=="__main__":
     main()
