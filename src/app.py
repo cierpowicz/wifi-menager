@@ -15,7 +15,6 @@ class Program:
         # setings funktions
         self.set_wifis_ssid_list()
         self.set_wifis_bssid_list()
-        self.install_liberary()
 
     
     # SET SECTION 
@@ -83,9 +82,6 @@ class Program:
     def clear_screen(self):
         os.system('clear')
 
-    def install_liberary(self):
-        command = "pip3 install -r requaierments.txt"
-        os.system(command)
 
     # TEST SECTION 
 
