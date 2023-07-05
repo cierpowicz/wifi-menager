@@ -11,6 +11,15 @@ with the previously created object.
 So, the program is located in the app.py file In the other files there are supor classes (monitoring.py wifi.py). 
 Is this how it is done ? I do not know the first time I use this 
 
+## Main goal of the program
+
+The main purpose is to monitor the network, when someone connects, send an email, when someone disconnects also send an email. 
+
+Current problem: I can't create a function which will return a list of hosts connected to AP !!! If you know how to do it help ;
+
+
+
+
 ## Step By Step
 
 ### Step 0: Classic, update upgrade
